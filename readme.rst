@@ -10,95 +10,12 @@ declaração de helpers, criação de novos controllers e models, desmembramento
 DB
 ************
 
-    SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-    START TRANSACTION;
-    SET time_zone = "+00:00";
+     create table usuarios (id integer auto_increment primary key, 
+     nome varchar(255), email varchar(255), senha varchar(255));
 
+     create table produtos (id integer auto_increment primary key,
+     nome varchar(255), descricao text, preco decimal(10,2), usuario_id integer);
 
-    /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-    /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-    /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-    /*!40101 SET NAMES utf8mb4 */;
-
-    --
-    -- Database: `db_projIntro`
-    --
-
-    -- --------------------------------------------------------
-
-    --
-    -- Table structure for table `produtos`
-    --
-
-    CREATE TABLE `produtos` (
-    `id` int(11) NOT NULL,
-    `nome` varchar(255) DEFAULT NULL,
-    `descricao` text DEFAULT NULL,
-    `preco` decimal(10,2) DEFAULT NULL,
-    `usuario_id` int(11) DEFAULT NULL
-    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
-    -- --------------------------------------------------------
-
-    --
-    -- Table structure for table `usuarios`
-    --
-
-    CREATE TABLE `usuarios` (
-    `id` int(11) NOT NULL,
-    `nome` varchar(255) DEFAULT NULL,
-    `email` varchar(255) DEFAULT NULL,
-    `senha` varchar(255) DEFAULT NULL
-    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
-    --
-    -- Indexes for dumped tables
-    --
-
-    --
-    -- Indexes for table `produtos`
-    --
-    ALTER TABLE `produtos`
-    ADD PRIMARY KEY (`id`);
-
-    --
-    -- Indexes for table `usuarios`
-    --
-    ALTER TABLE `usuarios`
-    ADD PRIMARY KEY (`id`);
-
-    --
-    -- AUTO_INCREMENT for dumped tables
-    --
-
-    --
-    -- AUTO_INCREMENT for table `produtos`
-    --
-    ALTER TABLE `produtos`
-    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
-
-    --
-    -- AUTO_INCREMENT for table `usuarios`
-    --
-    ALTER TABLE `usuarios`
-    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-    COMMIT;
-
-    /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-    /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-    /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
-
-
-Please see the `installation section <https://codeigniter.com/userguide3/installation/index.html>`_
-of the CodeIgniter User Guide.
-
-*******
-License
-*******
-
-Please see the `license
-agreement <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/license.rst>`_.
 
 *********
 Resources
@@ -110,3 +27,4 @@ Resources
 -  `Community Forums <https://forum.codeigniter.com/>`_
 -  `Community Wiki <https://github.com/bcit-ci/CodeIgniter/wiki>`_
 -  `Community Slack Channel <https://codeigniterchat.slack.com>`_
+-  `Fonte de Lucas Genari <https://www.youtube.com/channel/UCc58Rjf-L7_9U4ZAG6VcKAw>`_
