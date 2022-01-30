@@ -10,21 +10,21 @@ class Produtos extends CI_Controller
 		$lista = $this->Produtos_model->buscaTodos();
 		$dados = array("produtos" => $lista);
 
-		$this->load->view("templates/header", $dados);
-		$this->load->view("templates/nav-top", $dados);
+		$this->load->view("includes/header", $dados);
+		$this->load->view("includes/nav-top", $dados);
 		$this->load->view("produtos/index", $dados);
-		$this->load->view("templates/footer", $dados);
-		$this->load->view("templates/js", $dados);
+		$this->load->view("includes/footer", $dados);
+		$this->load->view("includes/js", $dados);
 	}
 
 	public function formulario()
 	{
 
-		$this->load->view("templates/header");
-		$this->load->view("templates/nav-top");
+		$this->load->view("includes/header");
+		$this->load->view("includes/nav-top");
 		$this->load->view("produtos/formulario");
-		$this->load->view("templates/footer");
-		$this->load->view("templates/js");
+		$this->load->view("includes/footer");
+		$this->load->view("includes/js");
 	}
 
 	public function novo()
@@ -53,11 +53,11 @@ class Produtos extends CI_Controller
 			redirect(uri: "/");
 
 		} else {
-			$this->load->view("templates/header");
-			$this->load->view("templates/nav-top");
+			$this->load->view("includes/header");
+			$this->load->view("includes/nav-top");
 			$this->load->view("produtos/formulario");
-			$this->load->view("templates/footer");
-			$this->load->view("templates/js");
+			$this->load->view("includes/footer");
+			$this->load->view("includes/js");
 		}
 	}
 
@@ -67,11 +67,11 @@ class Produtos extends CI_Controller
 		$produto = $this->produtos_model->retorna($id);
 		$dados = array("produto" => $produto);
 
-		$this->load->view("templates/header");
-		$this->load->view("templates/nav-top");
+		$this->load->view("includes/header");
+		$this->load->view("includes/nav-top");
 		$this->load->view("produtos/detalhe", $dados);
-		$this->load->view("templates/footer");
-		$this->load->view("templates/js");
+		$this->load->view("includes/footer");
+		$this->load->view("includes/js");
 
 	}
 
@@ -88,11 +88,11 @@ class Produtos extends CI_Controller
 		$produto = $this->produtos_model->retorna($id);
 		$dados = array("produto" => $produto);
 
-		$this->load->view("templates/header");
-		$this->load->view("templates/nav-top");
+		$this->load->view("includes/header");
+		$this->load->view("includes/nav-top");
 		$this->load->view("produtos/editar", $dados);
-		$this->load->view("templates/footer");
-		$this->load->view("templates/js");
+		$this->load->view("includes/footer");
+		$this->load->view("includes/js");
 	}
 
 	public function salvar($id){
